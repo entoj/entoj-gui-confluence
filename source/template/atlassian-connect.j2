@@ -17,19 +17,19 @@
                 "key": "entoj",
                 "name": {
                     "i18n": "entoj.viewer.name",
-                    "value": "Entoj macro"
+                    "value": "Entoj entity viewer"
                 },
                 "featured": true,
                 "url": "/confluence/viewer/display/{entity}",
                 "icon": {
                     "height": 80,
-                    "url": "/confluence/viewer/_/images/favicon.png",
+                    "url": "/confluence/viewer/images/favicon.png",
                     "width": 80
                 },
                 "imagePlaceholder": {
                     "width": 80,
                     "height": 80,
-                    "url": "/confluence/viewer/_/images/favicon.png",
+                    "url": "/confluence/viewer/images/favicon.png",
                     "applyChrome": true
                 },
                 "width": "100%",
@@ -40,16 +40,29 @@
                 },
                 "parameters": [
                     {
+                        "identifier": "site",
+                        "name": {
+                          "value": "Site"
+                        },
+                        "description": {
+                          "value": "The name of the site (e.g. base)"
+                        },
+                        "type": "string",
+                        "required": true,
+                        "defaultValue": "base",
+                        "hidden": false
+                    },
+                    {
                         "identifier": "entity",
                         "name": {
                           "value": "Entity"
                         },
                         "description": {
-                          "value": "The id of a entity (e.g. e-input)"
+                          "value": "The id of a entity (e.g. a-cta)"
                         },
                         "type": "string",
                         "required": true,
-                        "defaultValue": "e-input",
+                        "defaultValue": "a-cta",
                         "hidden": false
                     }
                 ]

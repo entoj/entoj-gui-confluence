@@ -74,18 +74,19 @@ class GuiConfluenceRoute extends GuiTemplateRoute
     /**
      * @inheritDocs
      */
-    register(express)
+    register(server)
     {
         const scope = this;
-        const promise = super.register(express);
+        const promise = super.register(server);
         promise.then(() =>
         {
             // Add templates
             this.addTemplateHandler('/integrations/confluence/viewer/atlassian-connect.json', 'atlassian-connect.j2');
-            this.addTemplateHandler('/integrations/confluence/viewer/display/:site/:entityId', 'display.j2', (route, request, model) =>
+            this.addTemplateHandler('/integrations/confluence/viewer/display/:site/:entityId/:variant', 'display.j2', false, (route, request, model) =>
             {
                 const promise = co(function*()
                 {
+                    model.location.variant = request.params.variant;
                     model.location.site = yield scope.sitesRepository.findBy({ '*': request.params.site });
                     model.location.entity = yield scope.entitiesRepository.getById(request.params.entityId, model.location.site);
                     if (model.location.entity)
@@ -99,7 +100,8 @@ class GuiConfluenceRoute extends GuiTemplateRoute
             // Add static files
             const staticPath = (url, request) =>
             {
-                return path.join(this.templatePaths[1], request.params[0]);
+                request.isAuthorizationRequired = false;
+                return path.join(this.templatePaths[2], request.params[0]);
             };
             this.addStaticFileHandler('/integrations/confluence/viewer/*', staticPath, ['.png', '.js', '.css']);
         });
