@@ -1,0 +1,59 @@
+{
+    "key": "entoj-viewer",
+    "name": "Entoj viewer",
+    "description": "A simple entoj entity viewer",
+    "version": "1.0",
+    "vendor": {
+         "name": "Syzygy GmbH",
+         "url": "http://syzygy.de"
+    },
+    "baseUrl": "https://confluence-viewer.entoj.io/",
+    "authentication": {
+        "type": "none"
+    },
+    "modules": {
+        "dynamicContentMacros": [
+            {
+                "key": "entoj",
+                "name": {
+                    "i18n": "entoj.viewer.name",
+                    "value": "Entoj macro"
+                },
+                "featured": true,
+                "url": "/confluence/viewer/display/{entity}",
+                "icon": {
+                    "height": 80,
+                    "url": "/confluence/viewer/_/images/favicon.png",
+                    "width": 80
+                },
+                "imagePlaceholder": {
+                    "width": 80,
+                    "height": 80,
+                    "url": "/confluence/viewer/_/images/favicon.png",
+                    "applyChrome": true
+                },
+                "width": "100%",
+                "height": "300px",
+                "description": {
+                    "i18n": "entoj.viewer.description",
+                    "value": "Insert a entoj entity onto a page"
+                },
+                "parameters": [
+                    {
+                        "identifier": "entity",
+                        "name": {
+                          "value": "Entity"
+                        },
+                        "description": {
+                          "value": "The id of a entity (e.g. e-input)"
+                        },
+                        "type": "string",
+                        "required": true,
+                        "defaultValue": "e-input",
+                        "hidden": false
+                    }
+                ]
+            }
+        ]
+    }
+}

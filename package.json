@@ -1,0 +1,21 @@
+{
+  "name": "entoj-gui-confluence",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=6.x"
+  },
+  "main": "source/index.js",
+  "dependencies": {
+    "co": "^4.6.0",
+    "entoj-gui": "*",
+    "entoj-system": "^0.1.11",
+    "lodash.omit": "^4.5.0",
+    "lodash.without": "^4.4.0"
+  },
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-sass": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-autoprefixer": "*"
+  }
+}
