@@ -3,6 +3,7 @@
 {% block header %}
 	<script src="https://syzygyffm.atlassian.net/atlassian-connect/all.js"></script>
 {% endblock %}
+{% block bodyClass %}has-nopaddings{% endblock %}
 {% block content %}
     <div class="ac-content">
         {% include 'base/atoms/a-cta/styleguide/' + global.location.variant + '.j2' %}
