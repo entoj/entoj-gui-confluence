@@ -7,7 +7,7 @@
          "name": "Syzygy GmbH",
          "url": "http://syzygy.de"
     },
-    "baseUrl": "https://confluence-viewer.entoj.io/",
+    "baseUrl": "{{ global.configuration.get('server.baseUrl', 'http://localhost') }}/",
     "authentication": {
         "type": "none"
     },
