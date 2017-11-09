@@ -20,7 +20,7 @@
                     "value": "Entoj entity viewer"
                 },
                 "featured": true,
-                "url": "/confluence/viewer/display/{entity}",
+                "url": "/confluence/viewer/display/{site}/{entity}/{variant}",
                 "icon": {
                     "height": 80,
                     "url": "/confluence/viewer/images/favicon.png",
@@ -63,6 +63,19 @@
                         "type": "string",
                         "required": true,
                         "defaultValue": "a-cta",
+                        "hidden": false
+                    },
+                    {
+                        "identifier": "variant",
+                        "name": {
+                          "value": "Variant"
+                        },
+                        "description": {
+                          "value": "The variant of the entity (e.g. all)"
+                        },
+                        "type": "string",
+                        "required": true,
+                        "defaultValue": "all",
                         "hidden": false
                     }
                 ]
